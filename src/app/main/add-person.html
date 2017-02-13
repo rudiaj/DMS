@@ -1,0 +1,51 @@
+<section id="add-person-wrapper">
+  <div class="cards-wrapper">
+    <article class="card">
+      <div class="form-wrapper">
+        <div class="img-wrapper">
+          <img src="/assets/images/10.png" alt="">
+          <div class="button-wrapper">
+          <a href="" class="button flex-center dark-gray">Cancel</a>
+          <a href="" class="button flex-center dark-gray">Cancel</a>
+        </div>
+        </div>
+        <form ng-submit="vm.submitAdd()" novalidate name="dmsAddForm">
+         <input placeholder="name" 
+               type="text" 
+               ng-maxlength="40"
+               pattern="[a-zA-Z]+" 
+               ng-model="vm.addForm.name" 
+               ng-required="true" >
+         <input placeholder="email" 
+                type="email" 
+                ng-model="vm.addForm.email" 
+                ng-required="true" >
+         <input placeholder="phone" 
+                type="number" 
+                ng-model="vm.addForm.phone" 
+                ng-maxlength="12" 
+                ng-required="true" >
+         <textarea placeholder="about"
+                  type="about" 
+                  ng-model="vm.addForm.about" 
+                  ng-required="true">
+          </textarea>
+    
+                   
+          <div class="card-footer">
+        
+      <a href="#/" class="button flex-center red">Cancel</a>
+        <button type="submit" 
+                          class="button flex-center green" 
+                          ng-disabled="dmsAddForm.$invalid"
+          >Add person</button>
+    </div>
+       </form>
+
+     </div>
+
+     
+  </article>
+</div>
+</section>
+{{vm.addForm}}

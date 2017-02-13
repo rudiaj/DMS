@@ -1,0 +1,29 @@
+<section id="main-wrapper" class="">
+  <div class="cards-wrapper">
+  <article ng-repeat="person in vm.persons" class="card">
+  <div class="card-heading-wrapper" style="background-image: url({{person.picture_url}})">
+  <div class="card-heading" >
+    <h1 class="name">{{person.name}}</h1>
+    <hr class="divider">
+      
+        <img class="profile-img"  src="{{person.picture_url}}" alt="">
+ 
+      <span class="info">Email: {{person.email}}</span>
+      <span class="info">Phone: {{person.phone}}</span>
+  </div>
+  </div>
+     <div class="card-footer">
+      <a ng-click="vm.editPerson(person.id)" type="button" class="button flex-center light-purple">Edit profile</a>
+      <button ng-click="vm.viewPerson(person.id)" class="button flex-center dark-purple">View profile</button>
+    </div>
+  </article>
+   <article class="card flex-center column">
+    <a href="#add">
+    <div class=" add-circle">
+      <img src="/assets/images/09.png" alt="">
+    </div>
+    </a>
+    <span class="add-text">Add new person</span>
+  </article>
+  </div>
+</section>

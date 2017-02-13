@@ -1,0 +1,245 @@
+/* Do not remove the comments below. It's the markers used by wiredep to inject
+sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+@import 'fonts';
+@import 'reset';
+@import 'variables';
+
+
+body{
+  background-color: #eaeaea;
+}
+.flex{
+  display: flex;
+}
+.column{
+  flex-direction: column;
+}
+
+#header{
+  background: linear-gradient($dark-purple, $light-purple);
+  height: 180px;
+  width: 100%;
+  box-shadow: $header-shadow;
+}
+.flex-center{
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-purple{
+  background-color: $dark-purple
+}
+.light-purple{
+  background-color: $light-purple
+}
+
+
+#main-wrapper, #add-person-wrapper, #edit-person-wrapper{
+  color: white;
+  font-family: 'proxima_nova_rgregular';
+  .cards-wrapper{
+    @extend .flex;
+    margin:40px auto;
+    flex-flow: row wrap;
+    align-items: stretch;
+    max-width: 1000px;
+    .card{
+      background-color: #fff;
+      margin:8px;
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 400px;
+      box-shadow: $card-shadow;
+      width: calc(33.3333333333% - 16px);
+      .card-heading-wrapper{
+        background-size: cover;
+        background-position: center;
+        .card-heading{
+          min-height: 320px;
+          @extend .flex;
+          padding:16px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(rgba(87, 38, 192, .74), rgba(154, 54, 181, .74)); 
+          .name{
+            font-size: 28px;
+            font-family: 'proxima_nova_rgregular';
+            color: #fff;
+          }
+          .divider{
+            width: 100%;
+            background-color: #fff;
+            border:none;
+            height: 1px;
+          }
+          .info{
+            margin:8px 0;
+            font-size: 14px;
+          }
+        }
+      }
+      .profile-img{
+        margin:16px 0;
+        background-color:$dark-purple; 
+        border-radius: 50%;
+        border: 8px solid white;
+        height: 110px;
+        width: 110px;
+      } 
+      .card-footer{
+        display:  flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:16px;
+      }
+      .add-circle{
+        overflow: hidden;
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 8px solid $gray;
+        height: 110px;
+        width: 110px;
+      }
+      .add-text{
+        color: black;
+        font-size: 18px;
+      }
+    } 
+  }
+  .button{
+    font-family: 'proxima_nova_rgregular';
+    font-size: 16px;
+    text-decoration:none;
+    border: 1px solid rgba(255,255,255,0);
+    border-radius: 13px;
+    text-transform: uppercase;
+    color: white;
+    background-color:$dark-purple; 
+    width: 135px;
+    height: 25px;
+    cursor: pointer;
+    margin:0 8px;
+  }
+  @media (max-width: 1024px) {
+  .card {
+    width: calc(50% - 16px) !important;
+  }
+}
+  @media (max-width: 600px) {
+  .card {
+    width: calc(100% - 16px) !important;
+  }
+  .form-wrapper{
+    flex-direction: column;
+    align-items: center;
+    .card-footer{
+      align-self: inherit;
+    }
+  }
+}
+    
+}
+
+
+#add-person-wrapper, #edit-person-wrapper{
+  .card{
+    flex: 1;
+  }
+  .form-wrapper{
+    display: flex;
+    .img-wrapper{
+     justify-content: center;
+     width: 40%;
+     img{
+
+     }
+   }
+   form{
+    width: 60%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input, textarea{
+      transition: all 0.2s ease-in-out;
+      font-family: 'proxima_nova_rgregular';
+      padding: 8px;
+      margin:8px;
+      height: 20px;
+      border: 2px solid $gray;
+      background-color: $gray;
+      width: 100%;
+      border-radius: 4px;
+      color: black;
+      &:focus,active{
+        outline: none;
+        border: 2px solid $gray;
+        background-color:white;
+      }
+    }
+    textarea{
+      height: 180px;
+    }
+    .submit-btn{
+      width: 100px;
+      background-color: green;
+    }
+    input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+      border: 2px solid $red;
+    }
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+}
+#add-person-wrapper ,#edit-person-wrapper{
+  .img-wrapper{
+    display: flex;
+    padding: 16px;
+    justify-content: initial !important;
+    align-items: center;
+    flex-direction: column;
+    img{
+      height: 120px;
+      width: auto;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      border: 8px solid #eaeaea;
+    }
+    .button-wrapper{
+      display: flex;
+    }
+  }
+
+  .card-footer{
+    padding: 0 !important;
+    align-self: flex-end;
+  }
+  .red{
+    background-color: $red;
+  }
+  .green{
+    background-color: $green;
+  }
+  .dark-gray{
+    background-color: $dark-gray;
+  }
+}
+
+
+/* Do not remove the comments below. It's the markers used by gulp-inject to inject
+all your sass files automatically */
+// injector
+// endinjector
